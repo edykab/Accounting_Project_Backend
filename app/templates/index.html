@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}E-Solutions - Accounting System{% endblock %}
+
+{% block content %}
+  <header class="header">
+        <img src="images/logo.png" alt="E-Solutions Logo" class="logo" width="60" height="60">
+    <nav class="nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="pages\about.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="pages/registration.html">Register</a></li>
+        <li><a href="pages/login.html">Login</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <section id="home" class="hero col-12">
+    <h1>Welcome to E-Solutions</h1>
+    <p style="color:white;">Your Trusted Accounting Partner</p>
+    <a href="pages/registration.html" class="cta-button">Get Started</a>
+  </section>
+
+  <section id="features" class="features row">
+    <div class="feature col-12 col-md-4">
+      <h2>Streamlined Transaction Management</h2>
+      <p>Effortlessly record, categorize, and monitor income and expenses for a
+        clear financial overview.</p>
+    </div>
+    <div class="feature col-12 col-md-4">
+      <h2>Real-Time Reports</h2>
+      <p>Stay informed with dynamic, real-time financial reports showcasing cash
+         flow, profit and loss statements, and balance sheets.</p>
+    </div>
+    <div class="feature col-12 col-md-4">
+      <h2>Bank Reconciliation</h2>
+      <p>Easily reconcile bank statements and track discrepancies to maintain
+        accurate financial records.</p>
+    </div>
+  </section>
+
+  <section id="demo" class="demo row">
+    <div class="col-12">
+      <h2>See Our Accounting System in Action</h2>
+      <div class="screenshots">
+    <img src="images/screenshot1.png" alt="Screenshot 1">
+    <img src="images/screenshot2.png" alt="Screenshot 2">
+    <img src="images/screenshot3.png" alt="Screenshot 3">
+    <img src="images/screnshot4.png" alt="Screenshot 4">
+    <img src="images/screnshot5.png" alt="Screenshot 5">
+    <img src="images/screnshot6.png" alt="Screenshot 6">
+    <img src="images/screnshot7.png" alt="Screenshot 7">
+    <img src="images/screnshot8.png" alt="Screenshot 8">
+    <img src="images/screnshot9.png" alt="Screenshot 9">
+
+  </div>
+
+    </div>
+  </section>
+  <section id="pricing" class="pricing row">
+  <div class="col-12">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-card">
+      <div class="plan">
+        <h3>Basic</h3>
+        <p>Perfect for individuals</p>
+        <p class="price">$19/month</p>
+        <a href="#" class="cta-button">Select Plan</a>
+      </div>
+      <div class="plan">
+        <h3>Business</h3>
+        <p>Best for small businesses</p>
+        <p class="price">$49/month</p>
+        <a href="#" class="cta-button">Select Plan</a>
+      </div>
+      <div class="plan">
+        <h3>Enterprise</h3>
+        <p>For larger organizations</p>
+        <p class="price">$99/month</p>
+        <a href="#" class="cta-button">Select Plan</a>
+      </div>
+    </div>
+  </div>
+  </section>
+  <section id="testimonials" class="testimonials row">
+    <div class="col-12">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial">
+        <p>"Since using this accounting system, managing my business finances
+           has been a breeze. It's user-friendly and has saved me valuable
+            time." - Vivian O., Small Business Owner</p>
+      </div>
+      <div class="testimonial">
+        <p>"I highly recommend this platform to anyone seeking an efficient
+           accounting solution. The reports are detailed, and the interface
+            is intuitive." - Peniel F., Freelancer</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about row">
+    <div class="col-12">
+      <h2>Meet the Team Behind the System</h2>
+      <p style="color:white;">Edmond Kabowei, Founder and Developer: Edmond is an accountant and a passionate developer
+         with a vision to simplify accounting processes for users of all
+         backgrounds.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact row">
+    <div class="col-12">
+      <h2>Reach Out to Us</h2>
+      <p>Have questions or need assistance? Contact our support team at
+        <a href="mailto:esolutions@gmail.com">esolutions@gmail.com</a>.
+         We're here to help you!</p>
+    </div>
+  </section>
+  <section id="faqs" class="faqs row">
+  <div class="col-12">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <h3>How do I get started with the accounting system?</h3>
+      <p>Getting started is easy! Simply sign up for an account and follow the setup instructions.</p>
+    </div>
+    <div class="faq">
+      <h3>Is my financial data secure?</h3>
+      <p>Yes, we prioritize the security of your data. Our system uses advanced encryption to keep your information safe.</p>
+    </div>
+    <div class="faq">
+      <h3>Can I upgrade my plan later?</h3>
+      <p>Of course! You can upgrade your plan at any time from your account settings.</p>
+    </div>
+  </div>
+  </section>
+
+  <footer class="footer row">
+    <p class="col-12">&copy; 2023 E-Solutions. All rights reserved.</p>
+  </footer>
+  {% endblock %}
