@@ -1,8 +1,8 @@
-from sqlalchemy import Integer, String, ForeignKey, DateTime, func, Float
-from sqlalchemy.orm import mapped_column, Mapped, DeclarativeBase
+from sqlalchemy import Integer, String, ForeignKey, DateTime, func, Numeric
+from sqlalchemy.orm import mapped_column, Mapped, DeclarativeBase, relationship
 from sqlalchemy.ext.declarative import declared_attr
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 class Base(DeclarativeBase):
     pass
@@ -12,31 +12,38 @@ class BaseModel:
     def __tablename__(cls):
         return cls.__name__.lower()
 
-
-class Base(DeclarativeBase):
-    pass
-
 class User(Base, BaseModel):
-    __tablename__ = 'User'
-    id:Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    username:Mapped[str] = mapped_column(String(200), unique=True)
-    email:Mapped[str] = mapped_column(String(120), unique=True)
-    password:Mapped[str] = mapped_column(String(255))
-
-
-class Expenses(Base, BaseModel):
-    __tablename__ = 'Expenses'
+    __tablename__ = 'user'
+    
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    user_id: Mapped[int] = mapped_column(Integer, ForeignKey('User.id'))  
-    date: Mapped[datetime] = mapped_column(DateTime)
-    description: Mapped[str] = mapped_column(String(64))
-    amount: Mapped[str] = mapped_column(Float)
-    category: Mapped[str] = mapped_column(String(64))
+    username: Mapped[str] = mapped_column(String(200), unique=True)
+    password: Mapped[str] = mapped_column(String(255))
+    
+    # Relationships
+    expenses: Mapped[List["Expense"]] = relationship(back_populates="user")
+    incomes: Mapped[List["Income"]] = relationship(back_populates="user")
+
+class Expense(Base, BaseModel):
+    __tablename__ = 'expense'
+    
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    user_id: Mapped[int] = mapped_column(ForeignKey('user.id'))
+    date: Mapped[datetime] = mapped_column(DateTime, default=func.now())
+    description: Mapped[str] = mapped_column(String(255))
+    amount: Mapped[float] = mapped_column(Numeric(10, 2))
+    category: Mapped[str] = mapped_column(String(50))
+    
+    # Relationship
+    user: Mapped["User"] = relationship(back_populates="expenses")
 
 class Income(Base, BaseModel):
-    __tablename__ = 'Income'
+    __tablename__ = 'income'
+    
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    user_id: Mapped[int] = mapped_column(Integer, ForeignKey('User.id'))  
-    date: Mapped[datetime] = mapped_column(DateTime)
-    source: Mapped[str] = mapped_column(String(64))
-    amount: Mapped[str] = mapped_column(Float)
+    user_id: Mapped[int] = mapped_column(ForeignKey('user.id'))
+    date: Mapped[datetime] = mapped_column(DateTime, default=func.now())
+    source: Mapped[str] = mapped_column(String(255))
+    amount: Mapped[float] = mapped_column(Numeric(10, 2))
+    
+    # Relationship
+    user: Mapped["User"] = relationship(back_populates="incomes")

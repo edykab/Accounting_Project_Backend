@@ -1,0 +1,40 @@
+<!-- income.html -->
+{% extends "base.html" %}
+{% block title %}Income{% endblock %}
+{% block content %}
+<div class="hero-section">
+    <h1 class="display-4">Why Keep Track Of Your Income?</h1>
+    <p class="lead">Tracking your income helps you understand your financial situation better.</p>
+    <div class="benefits">
+      <p>Identify your main sources of income.</p>
+      <p>Plan for future expenses.</p>
+      <p>Make informed financial decisions.</p>
+    </div>
+  </div>
+
+<div class="row justify-content-center align-items-center mt-4">
+    <div class="col-md-6">
+        <h2 class="text-center mb-4">Track Your Income</h2>
+        <p class="text-center mb-4">Keep a record of all your income sources to manage your finances effectively. Enter your income details below:</p>
+        <form method="POST" action="{{ url_for('income') }}">
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="source" class="form-label">Source</label>
+                <input type="text" class="form-control" id="source" name="source" required>
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" step="0.01" class="form-control" id="amount" name="amount" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Add Income</button>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <img src="../static/images/income.svg" alt="Income Tracking" class="img-fluid rounded-start" style="max-height: 400px; object-fit: cover;">
+    </div>
+</div>
+
+{% endblock %}

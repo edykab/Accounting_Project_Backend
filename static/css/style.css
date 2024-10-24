@@ -1,0 +1,67 @@
+/* static/css/style.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+.card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.alert {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+
+.badge {
+    font-size: 0.9em;
+}
+
+.row{
+    margin: auto 30px;
+}
+
+.hero-section {
+    background-color: rgb(70, 70, 79);
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .hero-section h1 {
+    margin-bottom: 15px;
+  }
+  
+  .hero-section p {
+    margin-bottom: 7px;
+  }
+  
+  .hero-section .benefits {
+    margin-top: 20px;
+  }
