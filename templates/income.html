@@ -16,7 +16,7 @@
     <div class="col-md-6">
         <h2 class="text-center mb-4">Track Your Income</h2>
         <p class="text-center mb-4">Keep a record of all your income sources to manage your finances effectively. Enter your income details below:</p>
-        <form method="POST" action="{{ url_for('income') }}">
+        <form method="POST" action="{{ url_for('income') }}" autocomplete="off">
             <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
                 <input type="date" class="form-control" id="date" name="date" required>
